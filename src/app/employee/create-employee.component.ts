@@ -13,6 +13,7 @@ export class CreateEmployeeComponent implements OnInit {
   datePickerBSConfig: Partial<BsDatepickerConfig>;
   gender = "male";
   department = 1;
+  showPhoto:boolean=false;
   departments: Department[] = [
     { id: 1, name: "HR" },
     { id: 2, name: "Help Desk" },
@@ -34,5 +35,9 @@ export class CreateEmployeeComponent implements OnInit {
 
   createEmployee(empForm: NgForm): void {
     console.log(empForm.value);
+  }
+
+  togglePhotoPreview(){
+    this.showPhoto=!this.showPhoto;
   }
 }
